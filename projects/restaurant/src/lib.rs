@@ -17,6 +17,12 @@ mod front_of_house {
 fn deliver_order() {}
 
 mod back_of_house {
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+
+
     pub struct Breakfast {
         pub toast: String,
         seasonal_fruit: String,
@@ -48,6 +54,9 @@ pub fn eat_at_restaurante() {
     front_of_house::hosting::add_to_waitlist();
 
     //Order a breakfast in the summer with Rye toast
+    let order1 = back_of_house::Appetizer::Soup;
+    let order2 = back_of_house::Appetizer::Salad;
+    
     let mut meal = back_of_house::Breakfast::summer("Rye");
 
     // Change our mind about the bread we'd like
