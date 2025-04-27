@@ -1,0 +1,20 @@
+[book]
+authors = ["Bijaya Khadka"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Journey"
+
+[output.html.fold]
+enable = false
+level = 0
+
+[output.html.playground]
+editable = true         # allows editing the source code
+copyable = true          # include the copy button for copying code snippets
+copy-js = true           # includes the JavaScript for the code editor
+line-numbers = false     # displays line numbers for editable code
+runnable = true          # displays a run button for rust code
+
+[output.html]
+mathjax-support = true
