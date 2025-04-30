@@ -35,3 +35,20 @@ This is the full file.
 ```rust,no_run,noplayground
 {{#include file.rs:all}}
 ```
+
+```rust,editable
+# contents of example.rs here.
+```
+
+<img class="right" src="images/rust-logo-blk.svg" alt="The Rust logo">
+
+
+<div class="warning">
+
+This is a bad thing that you should pay attention to.
+
+Warning blocks should be used sparingly in documentation, to avoid "warning
+fatigue," where people are trained to ignore them because they usually don't
+matter for what they're doing.
+
+</div>

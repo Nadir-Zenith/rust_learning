@@ -1,6 +1,5 @@
-use bevy::{
-    prelude::*,
-};
+use bevy::prelude::*;
+
 
 fn main() {
     App::new()
@@ -22,7 +21,7 @@ fn setup(
 
     commands.spawn((
         Player,
-        Material {
+        Material2dMesh{
             mesh: Mesh2d(meshes.add(Circle { radius: 50.0 })),
             material: materials.add(Color::WHITE),
             ..default()
