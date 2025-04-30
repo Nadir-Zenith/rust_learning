@@ -1,0 +1,6 @@
+[book]
+authors = ["Bijaya Khadka"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Learning Bevy"
