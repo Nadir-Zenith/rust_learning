@@ -1,6 +1,7 @@
-use std::collections::HashMap;
-use std::fmt;
-use std::io::{self, Write};
+use std::{
+    collections::HashMap,
+    fmt::{self},
+};
 mod lexer;
 use lexer::Lexer;
 use lexer::Token;
@@ -12,7 +13,7 @@ pub enum Expression {
 }
 
 impl fmt::Display for Expression {
-    fn fmt(&self, f: &mut ::Formatter<'_>) -> fmt::Result {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Expression::Atom(i) => write!(f, "{}", i),
             Expression::Operation(head, rest) => {
@@ -27,12 +28,12 @@ impl fmt::Display for Expression {
 }
 
 impl Expression {
-    fn from_str(input: &str) -> Expression {
+    pub fn from_str(input: &str) -> Expression {
         let mut lexer = Lexer::new(input);
         parse_expression(&mut lexer, 0.0)
     }
     #[allow(unused)]
-    fn is_asign(&self) -> Option<(char, &Expression)> {
+    pub fn is_asign(&self) -> Option<(char, &Expression)> {
         match self {
             Expression::Atom(_) => return None,
             Expression::Operation(c, operands) => {
@@ -54,7 +55,7 @@ impl Expression {
         }
     }
     #[allow(unused)]
-    fn eval(&self, variables: &HashMap<char, f32>) -> f32 {
+    pub fn eval(&self, variables: &HashMap<char, f32>) -> f32 {
         match self {
             Expression::Atom(c) => match c {
                 '0'..='9' => return c.to_digit(10).unwrap() as f32,
