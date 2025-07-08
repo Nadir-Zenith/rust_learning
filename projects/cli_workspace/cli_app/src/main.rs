@@ -1,6 +1,5 @@
 use clap::{Arg, Command};
-use cli_app::commands;
-use cli_app::settings;
+use cli_app::{commands, settings};
 
 pub fn main() -> anyhow::Result<()> {
     let mut command = Command::new("Sample CLI application").arg(
@@ -15,9 +14,9 @@ pub fn main() -> anyhow::Result<()> {
     let matches = command.get_matches();
 
     let config_location = matches
-        .get_one::<String>("config")
-        .map(|s| s.as_str())
-        .unwrap_or("");
+        .get_one("config")
+        .map(|s: &String| Some(s.as_str()))
+        .unwrap_or(None);
 
     let settings = settings::Settings::new(config_location, "APP")?;
 
